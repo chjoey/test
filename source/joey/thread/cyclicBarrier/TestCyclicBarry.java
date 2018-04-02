@@ -31,8 +31,9 @@ public class TestCyclicBarry extends Thread {
     }
 
     public static void main(String[] args) throws Exception {
-//        for (int i = 0; i < 4; i++) {
-        for (int i = 0; i < 5; i++) {
+//        for (int i = 0; i < 4; i++) {//小于5时阻塞
+//        for (int i = 0; i < 5; i++) {//大于等于5时解锁
+        for (int i = 0; i < 10; i++) {
             new TestCyclicBarry(i).start();
         }
 //        c.await();//i<5时可以尝试在主线程处理
